@@ -10,6 +10,7 @@ namespace WebAppMVC5NoWebAPI.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
 
