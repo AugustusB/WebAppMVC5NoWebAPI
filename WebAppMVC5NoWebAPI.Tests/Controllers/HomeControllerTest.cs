@@ -31,6 +31,7 @@ namespace WebAppMVC5NoWebAPI.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
+
             Assert.That(result.ViewBag.Message, Is.EqualTo("Your application description page."));
         }
 
