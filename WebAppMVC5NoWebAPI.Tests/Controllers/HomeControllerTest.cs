@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebAppMVC5NoWebAPI;
+﻿using System.Web.Mvc;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebAppMVC5NoWebAPI.Controllers;
+using NUnit.Framework;
 
 namespace WebAppMVC5NoWebAPI.Tests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-        [TestMethod]
+        [Test]
         public void Index()
         {
             // Arrange
@@ -22,10 +18,10 @@ namespace WebAppMVC5NoWebAPI.Tests.Controllers
             ViewResult result = controller.Index() as ViewResult;
 
             // Assert
-            Assert.IsNotNull(result);
+            Assert.That(result, Is.Not.Null);
         }
 
-        [TestMethod]
+        [Test]
         public void About()
         {
             // Arrange
@@ -35,10 +31,10 @@ namespace WebAppMVC5NoWebAPI.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.That(result.ViewBag.Message, Is.EqualTo("Your application description page."));
         }
 
-        [TestMethod]
+        [Test]
         public void Contact()
         {
             // Arrange
@@ -48,7 +44,7 @@ namespace WebAppMVC5NoWebAPI.Tests.Controllers
             ViewResult result = controller.Contact() as ViewResult;
 
             // Assert
-            Assert.IsNotNull(result);
+            Assert.That(result, Is.Not.Null);
         }
     }
 }
