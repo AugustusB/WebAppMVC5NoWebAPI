@@ -38,7 +38,6 @@ namespace WebAppMVC5NoWebAPI.Tests.Controllers
         public void Contact()
         {
             // Arrange
-
             HomeController controller = new HomeController();
 
             // Act
